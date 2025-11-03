@@ -9,24 +9,44 @@ class Solution {
                 map.put(i,map.getOrDefault(i,0)+1);
             }
         }
+        int maxyear=Integer.MAX_VALUE;
+        int maxpopulation=0;
+        for(int year:map.keySet()){
+            int population=map.get(year);
+            if(population>maxpopulation ||population==maxpopulation && year<maxyear){
+                maxyear=year;
+                maxpopulation=population;}}
+           
+           return maxyear;}
+           
+            }
+            
+            
+            
+            
+            
+            
+            
+//             )
+//         }
        
 
         
         
     
 
-// Step 2: Find year with maximum population
-        int maxYear = Integer.MAX_VALUE;
-        int maxPopulation = 0;
+// // Step 2: Find year with maximum population
+//         int maxYear = Integer.MAX_VALUE;
+//         int maxPopulation = 0;
 
-        for (int year : map.keySet()) {
-            int population = map.get(year);
-            if (population > maxPopulation || (population == maxPopulation && year < maxYear)) {
-                maxPopulation = population;
-                maxYear = year;
-            }
-        }
+//         for (int year : map.keySet()) {
+//             int population = map.get(year);
+//             if (population > maxPopulation || (population == maxPopulation && year < maxYear)) {
+//                 maxPopulation = population;
+//                 maxYear = year;
+//             }
+//         }
 
-        return maxYear;
-    }
-}
+//         return maxYear;
+//     }
+// }
