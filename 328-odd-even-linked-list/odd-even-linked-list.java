@@ -10,19 +10,20 @@
  */
 class Solution {
     public ListNode oddEvenList(ListNode head) {
-        if(head==null || head.next==null){
-            return head;
+        if(head==null||head.next==null)return head;
+
+        ListNode oddH = head;
+        ListNode evenH = head.next;
+
+        ListNode oddTrav=oddH;
+        ListNode evenTrav = evenH;
+        while(evenTrav!=null && evenTrav.next!=null){
+            oddTrav.next = evenTrav.next;
+            oddTrav = oddTrav.next;
+            evenTrav.next = oddTrav.next;
+            evenTrav = evenTrav.next;
         }
-        ListNode odd=head;
-        ListNode even=head.next;
-        ListNode evenHead=even;
-        while( even!=null && even.next!=null  ){
-            odd.next=even.next;
-            odd=odd.next;
-            even.next=odd.next;
-            even=even.next;
-        }
-        odd.next=evenHead;
+        oddTrav.next=evenH;
         return head;
     }
 }
