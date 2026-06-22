@@ -25,17 +25,17 @@ class Solution {
         public boolean prerder(TreeNode root,int v)
         {
            
-          //  prerder(root.left,v);
+       
           if(root==null) return true;
             if(root.val!=v)
             {
                 return false;
             }
-            if(!prerder(root.left,v)) return false;
-            if(!prerder(root.right,v)) return false;
+            // if(!prerder(root.left,v)) return false;
+            // if(!prerder(root.right,v)) return false;
+          return  prerder(root.left,v) && prerder(root.right,v);
 
-
-           return true;
+          // return true;
         }
 
 
